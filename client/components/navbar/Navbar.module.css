@@ -1,0 +1,182 @@
+.container {
+  top: 0;
+  width: 100%;
+  height: 8vh;
+  background-color: var(--secondary-color);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh;
+  color: #fff;
+}
+
+.container select {
+  background-color: var(--secondary-color);
+}
+
+.container option {
+  font-weight: bolder;
+}
+
+.logo {
+  width: 15%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo img {
+  height: 8vh;
+  width: auto;
+}
+.logo select {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.links_container {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.links_container a:hover {
+  color: var(--hover-color);
+}
+.active {
+  font-weight: bolder;
+  font-size: var(--font-lg);
+  text-decoration: underline;
+}
+
+.outlinks {
+  width: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selecteday {
+  text-decoration: underline;
+  font-size: var(--font-lg);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.day_options {
+  position: absolute;
+  top: 8.5vh;
+  left: 8.3vw;
+  background-color: var(--secondary-color);
+  width: 7vw;
+  height: 25vh;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.day_options :hover {
+  color: var(--hover-color);
+}
+
+.toogle_navbar_container {
+  display: none;
+}
+
+.toggle_links_container {
+  position: absolute;
+  width: 100vw;
+  min-height: 92vh;
+  top: 8vh;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color:var(--main-bg-color);
+  font-size: var(--font-m);
+}
+.toggle_outlinks {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 1400px) {
+  .links_container {
+    font-size: var(--font-sm);
+  }
+  .logo img {
+    height: 8vh;
+    width: auto;
+  }
+
+  .active {
+    font-size: var(--font-m);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .logo_toggle {
+    display: flex;
+    width: 14vw;
+  }
+  .links_container,
+  .outlinks {
+    display: none;
+  }
+  .toogle_navbar_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .toogle_navbar_container select {
+    width: 22vw;
+    font-size: 0.7rem;
+    z-index: 2;
+  }
+  .option {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .toggle_tittle {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bolder;
+    font-size: 2vh;
+  }
+  .toggle_links_container {
+    font-size: 16px;
+    background-color: var(--main-bg-color);
+  }
+  .active_toggle {
+    font-weight: bolder;
+    font-size: 2.5vh;
+    text-decoration: underline;
+  }
+  .selecteday_toggle {
+    font-size: 12px;
+    text-decoration: underline;
+  }
+  .day_options {
+    width: 40vw;
+    left: 34vw;
+    font-size: 12px;
+  }
+}

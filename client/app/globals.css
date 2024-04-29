@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  --font-sm:.75rem;
+  --font-m:1.3vh;
+  --font-lg:2.5vh;
+  --font-xl:3.2vh;
+  --font-weight:700;
+  --font-color:#fff;
+  --border-radius:5px;
+  --box-shadow:rgba(246, 246, 251, 0.887) 0px 4px 1px 0px;
+  --home-shadow: rgba(208, 196, 177, 0.5) 2px 6px 8px;
+  --linear-gradient: rgba(28, 27, 29, 0.9);
+  --main-color:#c7af8b;
+  --main-bg-color:#444333;
+  --hover-color:rgb(193, 186, 186);
+  --secondary-color:rgb(208, 196, 177);
+  --third-color:#151212;
+  --home-linear: linear-gradient(rgb(199, 175, 139), rgb(208, 196, 177));
+  --transparency:rgba(199, 175, 139, 0.8);
+  --specifics-blue: linear-gradient( rgb(21, 83, 238) 93%, rgba(103, 116, 215, 0.9));
+
+  --specifics-green:linear-gradient(rgb(40, 204, 40), rgba(45,131,48,0.9000642493325455));
+
+
+  /* 1280 */
+  --font-desktopm: 12px
+  --font-desktoplg:13px
+
+}
+
+
+body{
+  color: var(--main-color);
+  text-transform: uppercase;
+  background-color: #444333;
+  font-weight: var(--font-weight);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activities{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.lang
+{
+  position: absolute;
+  left: 60vw;
+  top: 3vh;
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+}
+
+.lang:hover{
+  transform: scale(1.1);
+}
+
+.selectLanguage_container{
+  width: 20vw;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--font-lg);
+  background-color: var(--main-bg-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+}
+
+.es, .en{
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.es button, .en button{
+  font-size: 35px;
+  color: var(--main-color);
+}
+
+@media screen  and (max-width: 768px) {
+  .lang, .selectLanguage_container{
+    display: none;
+  }
+
+}
+
+

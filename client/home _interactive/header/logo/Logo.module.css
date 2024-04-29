@@ -1,0 +1,20 @@
+.container{
+    width: 33vw;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img{
+height: 13vh;
+width: auto;
+}
+
+@media screen and (max-width:768px) {
+    .container img{
+        height: 10vh;
+        width: auto;
+        margin-left: 8vw;
+        }
+}
