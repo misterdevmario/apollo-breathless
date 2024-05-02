@@ -239,7 +239,7 @@ export default function Page() {
     <main>
       <div className={display}>
         <IoLanguageSharp
-          color="#c7af8b"
+          color="#fff"
           className="lang"
           onClick={() => openActivity()}
           // onClick={() => {

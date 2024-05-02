@@ -45,13 +45,7 @@
   font-weight: var(--font-weight);
   font-size: var(--font-m);
 }
- .card:nth-child(7)>.name, .card:nth-child(7)>.restaurants_info_container{
-background:var(--specifics-blue);
-}
 
- .card:nth-child(9)>.name, .card:nth-child(9)>.restaurants_info_container {
-background:var(--specifics-green);
-}
 
 .restaurants_info_container {
   width: 100%;
@@ -96,6 +90,7 @@ background:var(--specifics-green);
 .icon img{
   height: 1.5vh;
   width: auto;
+  color: #fff;
 }
 
 .info_container {

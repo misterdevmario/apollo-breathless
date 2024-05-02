@@ -17,7 +17,7 @@ const Transition = () => {
   }, [language, info]);
   return (
     <div className={className}>
-      <Image src="/gf.png" width={500} height={500} alt="hourglass logo" />
+      <Image src="/breathless.png" width={500} height={500} alt="hourglass logo" />
     </div>
   );
 };

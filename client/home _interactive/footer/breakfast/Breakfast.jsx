@@ -89,7 +89,7 @@ const Breakfast = ({ info }) => {
                       />
                     </div>
                     <div className={styles.icon}>
-                    <CiLocationOn size={15}/>
+                    <CiLocationOn size={15} color="#fff"/>
 
                     </div>
                   </div>
@@ -173,7 +173,7 @@ const Breakfast = ({ info }) => {
                       />
                     </div>
                     <div className={styles.icon}>
-                    <CiLocationOn size={15}/>
+                    <CiLocationOn size={18} color="#fff"/>
 
                     </div>
                   </div>

@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <div className={styles.container}>
       <Image
-        src="/gf.png"
+        src="/breathless.png"
         width={200}
         height={300}
         priority
