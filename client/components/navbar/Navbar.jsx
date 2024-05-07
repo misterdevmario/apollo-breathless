@@ -52,8 +52,8 @@ const Navbar = () => {
     ? router.replace("/editar/breakfast/", "").toLocaleUpperCase()
     : router.includes("flyers")
     ? router.replace("/editar/flyers/", "").toLocaleUpperCase()
-    : router.includes("pantallas")
-    ? router.replace("/editar/pantallas/", "").toLocaleUpperCase(): ""
+    : router.includes("pantalla")
+    ? router.replace("/editar/pantalla/", "").toLocaleUpperCase(): ""
 
   const selectedPath = router.includes("/editar") ? router
     .replace("/editar/", "")
