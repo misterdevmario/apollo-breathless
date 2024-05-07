@@ -17,6 +17,7 @@ const links = [
   "BREAKFAST",
   "BARS",
   "FLYERS",
+  "PANTALLAS"
 ];
 const days = [
   "LUNES",
@@ -51,7 +52,9 @@ const Navbar = () => {
     ? router.replace("/editar/breakfast/", "").toLocaleUpperCase()
     : router.includes("flyers")
     ? router.replace("/editar/flyers/", "").toLocaleUpperCase()
-    : "/";
+    : router.includes("pantallas")
+    ? router.replace("/editar/pantallas/", "").toLocaleUpperCase(): ""
+
   const selectedPath = router.includes("/editar") ? router
     .replace("/editar/", "")
     .replace(`/${selectedDay.toLocaleLowerCase()}`, ""): '/';

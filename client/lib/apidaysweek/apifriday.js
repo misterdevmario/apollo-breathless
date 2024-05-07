@@ -266,3 +266,27 @@ export async function getActivitiesFriday() {
     return res.json();
   }
   
+  //SCREEN
+//Method PUT
+  export async function getScreenFriday() {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenfridays`
+    );
+    if (!res.ok) throw new Error("Failed to fetch data");
+    return res.json();
+  }
+  
+  //Method PUT
+  export async function putScreenFriday(data, id) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenfridays/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
+    res.ok ? alert("Archivo actualizado exitosamente") : null;
+    if (!res.ok) throw new Error("Failed to update data");
+    return res.json();
+  }

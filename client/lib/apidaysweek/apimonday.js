@@ -264,4 +264,28 @@ export async function putFlyersTitleMonday(data, id) {
   return res.json();
 }
 
-//tuesday
+  //SCREEN
+//Method PUT
+  export async function getScreenMonday() {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenmondays`
+    );
+    if (!res.ok) throw new Error("Failed to fetch data");
+    return res.json();
+  }
+  
+  //Method PUT
+  export async function putScreenMonday(data, id) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenmondays/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
+    res.ok ? alert("Archivo actualizado exitosamente") : null;
+    if (!res.ok) throw new Error("Failed to update data");
+    return res.json();
+  }
+

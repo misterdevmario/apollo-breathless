@@ -53,7 +53,7 @@ const Login = () => {
                   className={styles.error}
                 />
 
-                <Field name="password" placeholder="contraseña" />
+                <Field name="password" type="password"  placeholder="contraseña" />
                 <ErrorMessage
                   name="password"
                   component="p"

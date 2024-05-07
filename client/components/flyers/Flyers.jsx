@@ -336,13 +336,13 @@ const Flyers = () => {
                         ))}
                       </Field>
                     </div>
-                    <Field name="nameEn" placeholder="nombre ingles" />
+                    <Field name="nameEn" placeholder="dia ingles" />
                     <ErrorMessage
                       name="nameEn"
                       component="p"
                       className={styles.error}
                     />
-                    <Field name="nameEs" placeholder="nombre español" />
+                    <Field name="nameEs" placeholder="dia español" />
                     <ErrorMessage
                       name="nameEs"
                       component="p"
@@ -549,13 +549,13 @@ const Flyers = () => {
                     </Field>
                   </div>
 
-                  <Field name="nameEn" placeholder="nombre ingles" />
+                  <Field name="nameEn" placeholder="dia ingles" />
                   <ErrorMessage
                     name="nameEn"
                     component="p"
                     className={styles.error}
                   />
-                  <Field name="nameEs" placeholder="nombre español" />
+                  <Field name="nameEs" placeholder="dia español" />
                   <ErrorMessage
                     name="nameEs"
                     component="p"

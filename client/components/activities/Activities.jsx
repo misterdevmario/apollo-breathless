@@ -170,7 +170,6 @@ const Carousel = () => {
     sethoursUppercase(hoursUppercase);
   }, [activities, desc]);
 
-console.log(hoursUppercase)
 
   const handleDescEn = () => {
     const description = hoursUppercase

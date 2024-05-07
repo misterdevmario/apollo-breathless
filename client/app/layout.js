@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   const [navbar, setNavbar] = useState(false)
 
   useEffect(()=>{
-    pathname == "/login" || pathname == '/' || pathname == "/interactive"? setNavbar(false) : setNavbar(true)
+    pathname == "/login" || pathname == '/' || pathname == "/interactive" || pathname == '/pantalla/uno' || pathname == '/pantalla/dos' || pathname == '/pantalla/tres' || pathname == '/pantalla/cuatro' || pathname == '/pantalla/cinco' || pathname == '/pantalla/seis' || pathname == '/pantalla/siete' || pathname == '/pantalla/ocho'  ? setNavbar(false) : setNavbar(true)
   },[pathname])
 
   return (

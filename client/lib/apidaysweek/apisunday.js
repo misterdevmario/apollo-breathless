@@ -263,3 +263,28 @@ export async function getActivitiesSunday() {
     if (!res.ok) throw new Error("Failed to update data");
     return res.json();
 }
+
+  //SCREEN
+//Method PUT
+export async function getScreenSunday() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screensundays`
+  );
+  if (!res.ok) throw new Error("Failed to fetch data");
+  return res.json();
+}
+
+//Method PUT
+export async function putScreenSunday(data, id) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screensundays/${id}`,
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }
+  );
+  res.ok ? alert("Archivo actualizado exitosamente") : null;
+  if (!res.ok) throw new Error("Failed to update data");
+  return res.json();
+}

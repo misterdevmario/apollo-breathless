@@ -59,7 +59,7 @@ const Bars = ({ info }) => {
         </div>
 
         <div className={styles.qr}>
-          <Image src="/qr.png" width={240} height={240} alt="qr" />
+          <Image src="/qrbreathless.png" width={240} height={240} alt="qr" />
           <div className={styles.scan}>{languageMobile == "en" ? qr.en : qr.es}</div>
         </div>
       </div>
