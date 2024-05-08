@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "screenthursdays",
+  "info": {
+    "singularName": "screenthursday",
+    "pluralName": "screenthursdays",
+    "displayName": "screenthursday",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    }
+  }
+}

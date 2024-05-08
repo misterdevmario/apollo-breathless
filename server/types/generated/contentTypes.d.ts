@@ -2597,6 +2597,224 @@ export interface ApiRestaurantsbarsgalleryRestaurantsbarsgallery
   };
 }
 
+export interface ApiScreenfridayScreenfriday extends Schema.CollectionType {
+  collectionName: 'screenfridays';
+  info: {
+    singularName: 'screenfriday';
+    pluralName: 'screenfridays';
+    displayName: 'screenfriday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screenfriday.screenfriday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screenfriday.screenfriday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreenmondayScreenmonday extends Schema.CollectionType {
+  collectionName: 'screenmondays';
+  info: {
+    singularName: 'screenmonday';
+    pluralName: 'screenmondays';
+    displayName: 'screenmonday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screenmonday.screenmonday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screenmonday.screenmonday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreensaturdayScreensaturday extends Schema.CollectionType {
+  collectionName: 'screensaturdays';
+  info: {
+    singularName: 'screensaturday';
+    pluralName: 'screensaturdays';
+    displayName: 'screensaturday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screensaturday.screensaturday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screensaturday.screensaturday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreensundayScreensunday extends Schema.CollectionType {
+  collectionName: 'screensundays';
+  info: {
+    singularName: 'screensunday';
+    pluralName: 'screensundays';
+    displayName: 'screensunday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screensunday.screensunday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screensunday.screensunday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreenthursdayScreenthursday extends Schema.CollectionType {
+  collectionName: 'screenthursdays';
+  info: {
+    singularName: 'screenthursday';
+    pluralName: 'screenthursdays';
+    displayName: 'screenthursday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screenthursday.screenthursday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screenthursday.screenthursday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreentuesdayScreentuesday extends Schema.CollectionType {
+  collectionName: 'screentuesdays';
+  info: {
+    singularName: 'screentuesday';
+    pluralName: 'screentuesdays';
+    displayName: 'screentuesday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screentuesday.screentuesday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screentuesday.screentuesday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiScreenwednesdayScreenwednesday
+  extends Schema.CollectionType {
+  collectionName: 'screenwednesdays';
+  info: {
+    singularName: 'screenwednesday';
+    pluralName: 'screenwednesdays';
+    displayName: 'screenwednesday';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::screenwednesday.screenwednesday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::screenwednesday.screenwednesday',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStafffridayStafffriday extends Schema.CollectionType {
   collectionName: 'stafffridays';
   info: {
@@ -2943,6 +3161,13 @@ declare module '@strapi/types' {
       'api::flyerwednesday.flyerwednesday': ApiFlyerwednesdayFlyerwednesday;
       'api::restaurantmenugallery.restaurantmenugallery': ApiRestaurantmenugalleryRestaurantmenugallery;
       'api::restaurantsbarsgallery.restaurantsbarsgallery': ApiRestaurantsbarsgalleryRestaurantsbarsgallery;
+      'api::screenfriday.screenfriday': ApiScreenfridayScreenfriday;
+      'api::screenmonday.screenmonday': ApiScreenmondayScreenmonday;
+      'api::screensaturday.screensaturday': ApiScreensaturdayScreensaturday;
+      'api::screensunday.screensunday': ApiScreensundayScreensunday;
+      'api::screenthursday.screenthursday': ApiScreenthursdayScreenthursday;
+      'api::screentuesday.screentuesday': ApiScreentuesdayScreentuesday;
+      'api::screenwednesday.screenwednesday': ApiScreenwednesdayScreenwednesday;
       'api::stafffriday.stafffriday': ApiStafffridayStafffriday;
       'api::staffgallery.staffgallery': ApiStaffgalleryStaffgallery;
       'api::staffmonday.staffmonday': ApiStaffmondayStaffmonday;

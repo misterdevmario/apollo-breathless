@@ -266,18 +266,18 @@ export async function putFlyersTitleSaturday(data, id) {
 
   //SCREEN
 //Method PUT
-export async function getScreensTuesday() {
+export async function getScreensSaturday() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screentuesdays`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screensaturdays`
   );
   if (!res.ok) throw new Error("Failed to fetch data");
   return res.json();
 }
 
 //Method PUT
-export async function putScreensTuesday(data, id) {
+export async function putScreensSaturday(data, id) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screentuesdays/${id}`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screensaturdays/${id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

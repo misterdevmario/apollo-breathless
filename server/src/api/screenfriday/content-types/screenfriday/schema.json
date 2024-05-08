@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "screenfridays",
+  "info": {
+    "singularName": "screenfriday",
+    "pluralName": "screenfridays",
+    "displayName": "screenfriday",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    }
+  }
+}
