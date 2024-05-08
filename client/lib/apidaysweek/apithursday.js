@@ -263,7 +263,7 @@ export async function getActivitiesThursday() {
   
     //SCREEN
 //Method PUT
-export async function getScreenThursday() {
+export async function getScreensThursday() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenthursdays`
   );
@@ -272,7 +272,7 @@ export async function getScreenThursday() {
 }
 
 //Method PUT
-export async function putScreenThursday(data, id) {
+export async function putScreensThursday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenthursdays/${id}`,
     {

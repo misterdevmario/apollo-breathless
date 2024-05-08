@@ -17,7 +17,7 @@ const links = [
   "BREAKFAST",
   "BARS",
   "FLYERS",
-  "PANTALLAS"
+  "PANTALLA"
 ];
 const days = [
   "LUNES",

@@ -22,6 +22,7 @@ import {
   deleteFlyersFriday,
   getFlyersTitleFriday,
   putFlyersTitleFriday,
+  putScreensFriday
 } from "@/lib/apidaysweek/apifriday";
 
 import {
@@ -45,6 +46,7 @@ import {
   deleteFlyersMonday,
   getFlyersTitleMonday,
   putFlyersTitleMonday,
+  putScreensMonday
 } from "@/lib/apidaysweek/apimonday";
 
 import {
@@ -68,6 +70,7 @@ import {
   deleteFlyersSaturday,
   getFlyersTitleSaturday,
   putFlyersTitleSaturday,
+  putScreensSaturday
 } from "@/lib/apidaysweek/apisaturday";
 
 import {
@@ -91,6 +94,7 @@ import {
   deleteFlyersSunday,
   getFlyersTitleSunday,
   putFlyersTitleSunday,
+  putScreensSunday
 } from "@/lib/apidaysweek/apisunday";
 
 import {
@@ -114,6 +118,7 @@ import {
   deleteFlyersThursday,
   getFlyersTitleThursday,
   putFlyersTitleThursday,
+  putScreensThursday
 } from "@/lib/apidaysweek/apithursday";
 
 import {
@@ -137,6 +142,7 @@ import {
   deleteFlyersTuesday,
   getFlyersTitleTuesday,
   putFlyersTitleTuesday,
+  putScreensTuesday
 } from "@/lib/apidaysweek/apituesday";
 
 import {
@@ -160,6 +166,7 @@ import {
   deleteFlyersWednesday,
   getFlyersTitleWednesday,
   putFlyersTitleWednesday,
+  putScreensWednesday
 } from "@/lib/apidaysweek/apiwednesday";
 
 import {
@@ -721,6 +728,45 @@ export const Provider = ({ children }) => {
     const res = await putFlyersTitleSunday({ data }, id);
     setActivityGallery(res.data);
   };
+
+   //FLYER TITLE
+
+  //monday
+  const updateScreenMonday = async (data, id) => {
+    const res = await putScreensMonday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //tuesday
+  const updateScreenTuesday = async (data, id) => {
+    const res = await putScreensTuesday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //wednesday
+  const updateScreenWednesday = async (data, id) => {
+    const res = await putScreensWednesday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //thursday
+  const updateScreenThursday = async (data, id) => {
+    const res = await putScreensThursday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //friday
+  const updateScreenFriday = async (data, id) => {
+    const res = await putScreensFriday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //saturday
+  const updateScreenSaturday = async (data, id) => {
+    const res = await putScreensSaturday({ data }, id);
+    setActivityGallery(res.data);
+  };
+  //sunday
+  const updateScreenSunday = async (data, id) => {
+    const res = await putScreensSunday({ data }, id);
+    setActivityGallery(res.data);
+  }; 
+
   return (
     <infoContext.Provider
       value={{
@@ -847,6 +893,15 @@ export const Provider = ({ children }) => {
         updateFlyerTitleFriday,
         updateFlyerTitleSaturday,
         updateFlyerTitleSunday,
+
+             //Screens
+             updateScreenMonday,
+             updateScreenTuesday,
+             updateScreenWednesday,
+             updateScreenThursday,
+             updateScreenFriday,
+             updateScreenSaturday,
+             updateScreenSunday,
 
         //Language
         language,
