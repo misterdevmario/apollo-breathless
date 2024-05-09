@@ -97,6 +97,7 @@
   margin-left: 2vw;
   font-weight: var(--font-weight);
   color: var(--secondary-color);
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1280px) {

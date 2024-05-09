@@ -13,11 +13,11 @@ const FooterRender = ({ info }) => {
       <div className={styles.staff}>
         <Staff info={info} />
       </div>
-      <div className={styles.dining}>
-        <Dining info={info} />
-      </div>
       <div className={styles.breakfast}>
         <Breakfast info={info} />
+      </div>
+      <div className={styles.dining}>
+        <Dining info={info} />
       </div>
       
       <div className={styles.bars}>

@@ -177,7 +177,7 @@ export const weatherDesc = {
 export const sectionTitles = {
   en: {
     staff: "entertainment staff",
-    dining: "dining",
+    dining: "diner",
     breaknlunch: "breakfast and lunch",
     bars: "bars",
     flyers: "other activities",
@@ -193,7 +193,7 @@ export const sectionTitles = {
 
 export const qr = {
   en: "Scan for mobile version",
-  es: "Escanear par version mobil",
+  es: "Escanealo y lleva la informacion en tu celular",
 };
 
 export const descriptions = {
