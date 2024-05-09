@@ -28,10 +28,10 @@
   --third-color:#151212;
   --home-linear: linear-gradient(rgb(160, 40, 204), rgb(54, 22, 160));
   --transparency:rgba(119, 41, 236, 0.8);
-  --specifics-blue: linear-gradient( rgb(21, 83, 238) 93%, rgba(103, 116, 215, 0.9));
+  /* --specifics-blue: linear-gradient( rgb(21, 83, 238) 93%, rgba(103, 116, 215, 0.9));
 
-  --specifics-green:linear-gradient(rgb(40, 204, 40), rgba(45,131,48,0.9000642493325455));
-
+  --specifics-green:linear-gradient(rgb(40, 204, 40), rgba(45,131,48,0.9000642493325455)); */
+--footer-title: 2.5vh;
 
   /* 1280 */
   --font-desktopm: 12px

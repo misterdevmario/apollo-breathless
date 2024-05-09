@@ -13,9 +13,9 @@ import axios from "axios";
 const links = [
   "ACTIVIDADES",
   "STAFF",
-  "DINNING",
-  "BREAKFAST",
-  "BARS",
+  "DESAYUNO-COMIDA",
+  "CENA",
+  "BARES",
   "FLYERS",
   "PANTALLA"
 ];
@@ -42,14 +42,14 @@ const Navbar = () => {
 
   const selectedDay = router.includes("actividades")
     ? router.replace("/editar/actividades/", "").toLocaleUpperCase()
-    : router.includes("bars")
-    ? router.replace("/editar/bars/", "").toLocaleUpperCase()
+    : router.includes("bares")
+    ? router.replace("/editar/bares/", "").toLocaleUpperCase()
     : router.includes("staff")
     ? router.replace("/editar/staff/", "").toLocaleUpperCase()
-    : router.includes("dinning")
-    ? router.replace("/editar/dinning/", "").toLocaleUpperCase()
-    : router.includes("breakfast")
-    ? router.replace("/editar/breakfast/", "").toLocaleUpperCase()
+    : router.includes("cena")
+    ? router.replace("/editar/cena/", "").toLocaleUpperCase()
+    : router.includes("desayuno-comida")
+    ? router.replace("/editar/desayuno-comida/", "").toLocaleUpperCase()
     : router.includes("flyers")
     ? router.replace("/editar/flyers/", "").toLocaleUpperCase()
     : router.includes("pantalla")

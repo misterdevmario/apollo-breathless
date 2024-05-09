@@ -1,303 +1,186 @@
-"use client";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useInfo } from "@/context/Context";
-import { useModal } from "@/components/modal/useModal";
-import { useModalDesc } from "@/components/modalDesc/useModalDesc";
-import Modal from "@/components/modal/Modal";
-import ModalDesc from "@/components/modalDesc/ModalDesc";
-import BreakfastGallery from "./gallery/BreakfastGallery";
-import { time } from "@/lib/language";
-import styles from "./Breakfast.module.css";
-import { usePathname } from "next/navigation";
-import { getBreakfastMonday } from "@/lib/apidaysweek/apimonday";
-import { getBreakfastTuesday } from "@/lib/apidaysweek/apituesday";
-import { getBreakfastWednesday } from "@/lib/apidaysweek/apiwednesday";
-import { getBreakfastThursday } from "@/lib/apidaysweek/apithursday";
-import { getBreakfastFriday } from "@/lib/apidaysweek/apifriday";
-import { getBreakfastSaturday } from "@/lib/apidaysweek/apisaturday";
-import { getBreakfastSunday } from "@/lib/apidaysweek/apisunday";
+.container {
+  width: 34vw;
+  height: 45vh;
+}
 
-const validation = Yup.object().shape({
-  name: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  hourStart: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  hourEnd: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  membersEn: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  membersEs: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  serviceEn: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  serviceEs: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  typeEs: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  typeEn: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-  typeEs: Yup.string()
-    .required("*Campo requerido")
-    .max(19, "La longitud maxima es de 19 letras!"),
-});
+.title {
+  width: 100%;
+  height: 4vh;
+  background: var(--home-linear);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: var(--font-weight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2px;
+}
 
-const Breakfast = () => {
-  const [breakfast, setBreakfast] = useState();
-  const {
-    updateBreakfastMonday,
-    updateBreakfastTuesday,
-    updateBreakfastWednesday,
-    updateBreakfastThursday,
-    updateBreakfastFriday,
-    updateBreakfastSaturday,
-    updateBreakfastSunday,
-  } = useInfo();
-  const [id, setId] = useState("");
-  const [menu, setMenu] = useState([]);
-  const [isOpenGallery, openGallery, closeGallery] = useModal(true);
-  const [isOpenMenuLgEn, openMenuLgEn, closeMenuLgEn] = useModalDesc(true);
+.card_container {
+  width: 100%;
+  height: 41vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vh;
+}
 
-  const router = usePathname();
-  const selectedDay = router.includes("actividades")
-    ? router.replace("/editar/actividades/", "")
-    : router.includes("bars")
-    ? router.replace("/editar/bars/", "")
-    : router.includes("staff")
-    ? router.replace("/editar/staff/", "")
-    : router.includes("dinning")
-    ? router.replace("/editar/dinning/", "")
-    : router.includes("breakfast")
-    ? router.replace("/editar/breakfast/", "")
-    : router.includes("flyers")
-    ? router.replace("/editar/flyers/", "")
-    : null;
-  useEffect(() => {}, []);
-  useEffect(() => {
-    (async () => {
-      if (selectedDay == "lunes") {
-        const breakfastResponseMonday = await getBreakfastMonday();
-        setBreakfast(breakfastResponseMonday.data);
-      }
-      if (selectedDay == "martes") {
-        const breakfastResponseTuesday = await getBreakfastTuesday();
-        setBreakfast(breakfastResponseTuesday.data);
-      }
-      if (selectedDay == "miercoles") {
-        const breakfastResponseWednesday = await getBreakfastWednesday();
-        setBreakfast(breakfastResponseWednesday.data);
-      }
-      if (selectedDay == "jueves") {
-        const breakfastResponseThursday = await getBreakfastThursday();
-        setBreakfast(breakfastResponseThursday.data);
-      }
-      if (selectedDay == "viernes") {
-        const breakfastResponseFriday = await getBreakfastFriday();
-        setBreakfast(breakfastResponseFriday.data);
-      }
-      if (selectedDay == "sabado") {
-        const breakfastResponseSaturday = await getBreakfastSaturday();
-        setBreakfast(breakfastResponseSaturday.data);
-      }
-      if (selectedDay == "domingo") {
-        const breakfastResponseSunday = await getBreakfastSunday();
-        setBreakfast(breakfastResponseSunday.data);
-      }
-    })();
-  }, [
-    selectedDay,
-    updateBreakfastMonday,
-    updateBreakfastTuesday,
-    updateBreakfastWednesday,
-    updateBreakfastThursday,
-    updateBreakfastFriday,
-    updateBreakfastSaturday,
-    updateBreakfastSunday,
-  ]);
-  const handleMenu = () => {
-    const menu = breakfast
-      .filter((item) => item.id == id)
-      .map((item) => item.attributes.menus);
-    setMenu(menu);
-  };
-  return (
-    <div className={styles.container}>
-      <div className={styles.form_container}>
-        {breakfast?.map((item) => (
-          <Formik
-            key={item.id}
-            initialValues={{
-              name: item.attributes.name,
-              hourStart: item.attributes.hourStart,
-              hourEnd: item.attributes.hourEnd,
-              membersEn: item.attributes.membersEn,
-              membersEs: item.attributes.membersEs,
-              serviceEn: item.attributes.serviceEn,
-              serviceEs: item.attributes.serviceEs,
-              typeEn: item.attributes.typeEn,
-              typeEs: item.attributes.typeEs,
-            }}
-            validationSchema={validation}
-            onSubmit={async (data, actions) => {
-              if (selectedDay == "lunes")
-                await updateBreakfastMonday(data, item.id);
-              if (selectedDay == "martes")
-                await updateBreakfastTuesday(data, item.id);
-              if (selectedDay == "miercoles")
-                await updateBreakfastWednesday(data, item.id);
-              if (selectedDay == "jueves")
-                await updateBreakfastThursday(data, item.id);
-              if (selectedDay == "viernes")
-                await updateBreakfastFriday(data, item.id);
-              if (selectedDay == "sabado")
-                await updateBreakfastSaturday(data, item.id);
-              if (selectedDay == "domingo")
-                await updateBreakfastSunday(data, item.id);
-            }}
-          >
-            {({ handlesubmit }) => (
-              <Form className={styles.form}>
-                <div className={styles.inputs}>
-                  <div className={styles.hours}>
-                    <Field as="select" name="hourStart" placeholder={"Inicio"}>
-                      <option value="defaultValue">
-                        {item.attributes.hourStart}
-                      </option>
-                      {time.map((item, i) => (
-                        <option key={i} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </Field>
-                    <Field as="select" name="hourEnd" placeholder={"Termino"}>
-                      <option value="defaultValue">
-                        {item.attributes.hourEnd}
-                      </option>
-                      {time.map((item, i) => (
-                        <option key={i} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </Field>
-                  </div>
-                  <Field name="name" placeholder="nombre" />
-                  <ErrorMessage
-                    name="name"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="typeEn" placeholder="tipo español" />
-                  <ErrorMessage
-                    name="typeEn"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="typeEs" placeholder="tipo ingles" />
-                  <ErrorMessage
-                    name="typeEs"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="serviceEn" placeholder="servicio español" />
-                  <ErrorMessage
-                    name="serviceEn"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="serviceEs" placeholder="servicio ingles" />
-                  <ErrorMessage
-                    name="serviceEs"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="membersEn" placeholder="miembros ingles" />
-                  <ErrorMessage
-                    name="membersEn"
-                    component="p"
-                    className={styles.error}
-                  />
-                  <Field name="membersEs" placeholder="miembros español" />
-                  <ErrorMessage
-                    name="membersEs"
-                    component="p"
-                    className={styles.error}
-                  />
-          
-                  <button className={styles.save} type="submit">
-                    Guardar
-                  </button>
-                </div>
-                <div className={styles.images}>
-                  <div className={styles.diningimg}>
-                    <Image
-                      src={item.attributes?.breakfastImg}
-                      alt="bar"
-                      width={200}
-                      height={250}
-                      priority
-                      onClick={() => {
-                        openGallery();
-                        setId(item.id);
-                      }}
-                    />
-                  </div>
-                  <div className={styles.menus} onMouseEnter={()=>setId(item.id)}>
-                    <div className={styles.menuitem}>
-                      <label htmlFor="">Menu</label>
-                      <Image
-                        src={item.attributes.menus[0]}
-                        alt="bar"
-                        width={200}
-                        height={250}
-                        priority
-                        onMouseEnter={() => handleMenu()}
-                        onClick={() => openMenuLgEn()}
-                        
-                      />{" "}
-                    </div>
-         
-                  </div>
-                </div>
-              </Form>
-            )}
-          </Formik>
-        ))}
-        <Modal isOpen={isOpenGallery} closeModal={closeGallery}>
-          <BreakfastGallery id={id} closeModal={closeGallery} />
-        </Modal>
-        <Modal isOpen={isOpenMenuLgEn} closeModal={closeMenuLgEn}>
-          <div className={styles.menuLg}>
-            <h1>Menu</h1>
-            { menu[0]?.map((item, i) => (
-            <>
-              <Image
-              key={i}
-              src={item}
-              alt="Menu"
-              width={600}
-              height={800}
-              priority
-              />
-            <div>{i.toString()}</div>
-              </>
-            ))}
-          </div>
-        </Modal>
-      
-      </div>
-    </div>
-  );
-};
+.card {
+  width: 16vw;
+  height: 9vh;
+  border-radius: var(--border-radius);
+  box-shadow: var(--home-shadow);
+}
 
-export default Breakfast;
+.name {
+  width: 100%;
+  height: 20%;
+  background: var(--home-linear);
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-m);
+}
+
+
+.restaurants_info_container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  border-radius: 0 0 5px 5px;
+}
+
+.logo {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:var(--main-bg-color);
+  border-radius: 0 0 0 5px;
+  margin-right: 12%;
+}
+.logo img {
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 0 5px;
+}
+
+.iconsinfo {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons_container {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.icon img{
+  height: 1.5vh;
+  width: auto;
+  color: #fff;
+}
+
+.info_container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--font-color);
+  font-size: var(--font-sm);
+}
+.container_sm {
+  display: none;
+}
+
+.modal_img {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+
+
+}
+
+.modal_img img{
+  border-radius: var(--border-radius);
+  background-color: #fff;
+}
+
+
+.modal_img {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.modal_img img{
+  border-radius: var(--border-radius);
+  height: 80vh;
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: none;
+  }
+
+  .container_sm {
+    width: 100vw;
+    height: 130vh;
+    display: block;
+ 
+  }
+  .card_container {
+    height: 125vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+  .card {
+    width: 90%;
+    height: 15vh;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .info {
+    font-size: 13px;
+  }
+  .icons_container img {
+    height: 2.5vh;
+    width: auto;
+  }
+  .modal_img {
+    width: 98vw;
+    flex-direction: column;
+    min-height: 200vh;
+  }
+
+}
+

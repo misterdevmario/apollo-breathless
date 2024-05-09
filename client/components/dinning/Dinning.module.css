@@ -31,12 +31,7 @@
   background-color: #fff;
 }
 
-.form:nth-child(6){
-  background: var(--specifics-blue);
-}
-.form:nth-child(8){
-  background: var(--specifics-green);
-}
+
 
 .inputs {
   display: flex;
