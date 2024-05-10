@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   const body = await request.json();
   const { identifier, password } = body;
-  if ( identifier !== "breathless" || password !== "HourglassAuth1234") {
+  if ( identifier !== "BRCSL" || password !== "Purple$01") {
     return NextResponse.json(
       { message: "Usuario o contraseña incorrecto" },
       { status: 401 }

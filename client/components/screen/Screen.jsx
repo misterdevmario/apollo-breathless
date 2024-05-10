@@ -15,7 +15,7 @@ import { getScreensThursday } from "@/lib/apidaysweek/apithursday";
 import { getScreensFriday } from "@/lib/apidaysweek/apifriday";
 import { getScreensSaturday } from "@/lib/apidaysweek/apisaturday";
 import { getScreensSunday } from "@/lib/apidaysweek/apisunday";
-import styles from "./Screen.module.css"
+import styles from "./Screen.module.css";
 
 const validation = Yup.object().shape({
   name: Yup.string()
@@ -44,7 +44,9 @@ const Screen = () => {
   const [isOpenGallery, openGallery, closeGallery] = useModal(true);
 
   const router = usePathname();
-  const selectedDay = router.includes("pantalla")? router.replace("/editar/pantalla/", ""): null;
+  const selectedDay = router.includes("pantalla")
+    ? router.replace("/editar/pantalla/", "")
+    : null;
 
   useEffect(() => {
     (async () => {
@@ -87,17 +89,28 @@ const Screen = () => {
     // updatScreenSaturday,
     // updatScreenSunday,
   ]);
-console.log(screen)
+  console.log(screen?.map(i => i.attributes.data.assets.map(imgvideo => imgvideo)));
   const sortedScreen = screen?.sort((a, b) => a.id - b.id);
-  return <div >
+  return (
+    <div>
+      <div className={styles.container}>
+        {sortedScreen?.map((item, i) => (
+          <div className={styles.card} key={i}>
+            <div className="id"></div>
+            <form action="">
 
-    <div className={styles.container}>
-{
-  
-}
-
+              <div className="assets">{item.attributes.data.assets.map((imgvideo, i) => (
+                
+                <h1 key={i}>{imgvideo} </h1>
+              ))}</div>
+              <div className="duration"></div>
+              <div className="interval"></div>
+            </form>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default Screen;
