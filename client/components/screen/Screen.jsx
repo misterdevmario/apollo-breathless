@@ -15,6 +15,7 @@ import { getScreensThursday } from "@/lib/apidaysweek/apithursday";
 import { getScreensFriday } from "@/lib/apidaysweek/apifriday";
 import { getScreensSaturday } from "@/lib/apidaysweek/apisaturday";
 import { getScreensSunday } from "@/lib/apidaysweek/apisunday";
+import styles from "./Screen.module.css"
 
 const validation = Yup.object().shape({
   name: Yup.string()
@@ -87,8 +88,16 @@ const Screen = () => {
     // updatScreenSunday,
   ]);
 console.log(screen)
-  // const sortedBars = bars?.sort((a, b) => a.id - b.id);
-  return <div >Hello World</div>;
+  const sortedScreen = screen?.sort((a, b) => a.id - b.id);
+  return <div >
+
+    <div className={styles.container}>
+{
+  
+}
+
+    </div>
+  </div>;
 };
 
 export default Screen;

@@ -268,7 +268,7 @@ export async function getActivitiesFriday() {
   
   //SCREEN
 //Method PUT
-  export async function getScreensriday() {
+  export async function getScreensFriday() {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screenfridays`
     );

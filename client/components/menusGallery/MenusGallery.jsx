@@ -50,17 +50,18 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
   const selectedSection = router.split("/")[2];
   const selectedDay = router.includes("actividades")
     ? router.replace("/editar/actividades/", "")
-    : router.includes("bars")
-    ? router.replace("/editar/bars/", "")
+    : router.includes("bares")
+    ? router.replace("/editar/bares/", "")
     : router.includes("staff")
     ? router.replace("/editar/staff/", "")
-    : router.includes("dinning")
-    ? router.replace("/editar/dinning/", "")
-    : router.includes("breakfast")
-    ? router.replace("/editar/breakfast/", "")
+    : router.includes("cena")
+    ? router.replace("/editar/cena/", "")
+    : router.includes("desayuno-comida")
+    ? router.replace("/editar/desayuno-comida/", "")
     : router.includes("flyers")
     ? router.replace("/editar/flyers/", "")
-    : null && postMenu == false;
+    : router.includes("pantalla")
+    ? router.replace("/editar/pantalla/", ""): "" && postMenu == false;
 
   useEffect(() => {
     (async () => {
@@ -175,7 +176,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
             onClick={() => {
               // DINNING
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "lunes" &&
                 id !== null &&
                 postMenu == false
@@ -183,7 +184,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningMonday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "lunes" &&
                 id !== null &&
                 postMenu == true
@@ -192,7 +193,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningMonday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "martes" &&
                 id !== null &&
                 postMenu == false
@@ -200,7 +201,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningTuesday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "martes" &&
                 id !== null &&
                 postMenu == true
@@ -209,7 +210,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningTuesday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "miercoles" &&
                 id !== null &&
                 postMenu == false
@@ -217,7 +218,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningWednesday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "miercoles" &&
                 id !== null &&
                 postMenu == true
@@ -226,7 +227,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningWednesday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "jueves" &&
                 id !== null &&
                 postMenu == false
@@ -234,7 +235,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningThursday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "jueves" &&
                 id !== null &&
                 postMenu == true
@@ -243,7 +244,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningThursday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "viernes" &&
                 id !== null &&
                 postMenu == false
@@ -251,7 +252,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningFriday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "viernes" &&
                 id !== null &&
                 postMenu == true
@@ -260,7 +261,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningFriday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "sabado" &&
                 id !== null &&
                 postMenu == false
@@ -268,7 +269,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningSaturday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "sabado" &&
                 id !== null &&
                 postMenu == true
@@ -277,7 +278,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 updateDinningSaturday({ menus: [...menusArrayDining[0]] }, id);
               }
               if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "domingo" &&
                 id !== null &&
                 postMenu == false
@@ -285,7 +286,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuDining(item);
                 updateDinningSunday({ menus: [...menusArrayDining[0]] }, id);
               } else  if (
-                selectedSection == "dinning" &&
+                selectedSection == "cena" &&
                 selectedDay == "domingo" &&
                 id !== null &&
                 postMenu == true
@@ -296,7 +297,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               // BREAKFAST
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "lunes" &&
                 id !== null &&
                 postMenu == false
@@ -304,7 +305,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastMonday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "lunes" &&
                 id !== null &&
                 postMenu == true
@@ -314,7 +315,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "martes" &&
                 id !== null &&
                 postMenu == false
@@ -322,7 +323,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastTuesday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "martes" &&
                 id !== null &&
                 postMenu == true
@@ -332,7 +333,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "miercoles" &&
                 id !== null &&
                 postMenu == false
@@ -340,7 +341,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastWednesday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "miercoles" &&
                 id !== null &&
                 postMenu == true
@@ -350,7 +351,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "jueves" &&
                 id !== null &&
                 postMenu == false
@@ -358,7 +359,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastThursday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "jueves" &&
                 id !== null &&
                 postMenu == true
@@ -368,7 +369,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "viernes" &&
                 id !== null &&
                 postMenu == false
@@ -376,7 +377,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastFriday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "viernes" &&
                 id !== null &&
                 postMenu == true
@@ -386,7 +387,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "sabado" &&
                 id !== null &&
                 postMenu == false
@@ -394,7 +395,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastSaturday({ menus: [...menusArrayBreakfast[0]] }, id);
               } else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "sabado" &&
                 id !== null &&
                 postMenu == true
@@ -404,7 +405,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
 
               }
               if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "domingo" &&
                 id !== null &&
                 postMenu == false
@@ -412,7 +413,7 @@ const MenusGallery = ({ id, menuId, closeModal, postMenu }) => {
                 handleIndexMenuBreakfast(item);
                 updateBreakfastSunday({ menus: [...menusArrayBreakfast[0]] }, id);
               }else  if (
-                selectedSection == "breakfast" &&
+                selectedSection == "desayuno-comida" &&
                 selectedDay == "domingo" &&
                 id !== null &&
                 postMenu ==true

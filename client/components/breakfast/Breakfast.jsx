@@ -170,7 +170,7 @@ const Breakfast = () => {
     id,
   ]);
   const sortedRestaurants = breakfast?.sort((a, b) => a.id - b.id);
-
+console.log(breakfast)
 
   const handleMenu = () => {
     const menu = breakfast
