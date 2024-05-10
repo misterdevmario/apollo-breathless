@@ -19,17 +19,18 @@ const BarsGallery = ({ id, closeModal }) => {
   const router = usePathname();
   const selectedDay = router.includes("actividades")
     ? router.replace("/editar/actividades/", "")
-    : router.includes("bars")
-    ? router.replace("/editar/bars/", "")
+    : router.includes("bares")
+    ? router.replace("/editar/bares/", "")
     : router.includes("staff")
     ? router.replace("/editar/staff/", "")
-    : router.includes("dinning")
-    ? router.replace("/editar/dinning/", "")
-    : router.includes("breakfast")
-    ? router.replace("/editar/breakfast/", "")
+    : router.includes("cena")
+    ? router.replace("/editar/cena/", "")
+    : router.includes("desayuno-comida")
+    ? router.replace("/editar/desayuno-comida/", "")
     : router.includes("flyers")
     ? router.replace("/editar/flyers/", "")
-    : null;
+    : router.includes("pantalla")
+    ? router.replace("/editar/pantalla/", ""): ""
     
   return (
     <div className={styles.container}>
