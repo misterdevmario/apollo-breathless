@@ -89,23 +89,31 @@ const Screen = () => {
     // updatScreenSaturday,
     // updatScreenSunday,
   ]);
-  console.log(screen?.map(i => i.attributes.data.assets.map(imgvideo => imgvideo)));
+  console.log(  screen?.map(item => item.attributes.data.assets.map(item => item)));
+  console.log(screen)
   const sortedScreen = screen?.sort((a, b) => a.id - b.id);
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.card_container}>
         {sortedScreen?.map((item, i) => (
           <div className={styles.card} key={i}>
-            <div className="id"></div>
-            <form action="">
-
-              <div className="assets">{item.attributes.data.assets.map((imgvideo, i) => (
-                
-                <h1 key={i}>{imgvideo} </h1>
-              ))}</div>
-              <div className="duration"></div>
-              <div className="interval"></div>
+            <div className={styles.id_name_container}>
+              <div className={styles.id}>{item.attributes.data.hardware_id}</div>
+              <div className={styles.route_name}>{item.attributes.data.route_name}</div>
+            </div>
+            <form className={styles.form} action="">
+              <div className="duration">{item.attributes.data.duration} </div>
+              <div className="interval">{item.attributes.data.interval} </div>
             </form>
+            {}
+            <div className={styles.image_video}>
+             <Image
+             src= {item.attributes.data.assets?.map(item => item.toString())}
+             alt="image"
+             width={200}
+             height={100}
+             />
+            </div>
           </div>
         ))}
       </div>

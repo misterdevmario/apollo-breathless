@@ -252,27 +252,27 @@ const Dinning = () => {
                       component="p"
                       className={styles.error}
                     />
-                    <Field name="typeEn" placeholder="tipo español" />
-                    <ErrorMessage
-                      name="typeEn"
-                      component="p"
-                      className={styles.error}
-                    />
-                    <Field name="typeEs" placeholder="tipo ingles" />
+                    <Field name="typeEs" placeholder="tipo español" />
                     <ErrorMessage
                       name="typeEs"
                       component="p"
                       className={styles.error}
                     />
-                    <Field name="serviceEn" placeholder="servicio español" />
+                    <Field name="typeEn" placeholder="tipo ingles" />
                     <ErrorMessage
-                      name="serviceEn"
+                      name="typeEn"
                       component="p"
                       className={styles.error}
                     />
-                    <Field name="serviceEs" placeholder="servicio ingles" />
+                    <Field name="serviceEs" placeholder="servicio español" />
                     <ErrorMessage
                       name="serviceEs"
+                      component="p"
+                      className={styles.error}
+                    />
+                    <Field name="serviceEn" placeholder="servicio ingles" />
+                    <ErrorMessage
+                      name="serviceEn"
                       component="p"
                       className={styles.error}
                     />

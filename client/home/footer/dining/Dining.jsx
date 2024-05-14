@@ -21,7 +21,7 @@ const Dining = ({ info }) => {
     setInfoDesc(infoModal);
   };
   const sortedRestaurants = info.dining?.sort((a, b) => a.id - b.id);
-
+console.log(language)
   return (
     <>
       <div className={styles.container}>

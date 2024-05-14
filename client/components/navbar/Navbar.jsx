@@ -17,7 +17,7 @@ const links = [
   "CENA",
   "BARES",
   "FLYERS",
-  // "PANTALLA"
+  "PANTALLA"
 ];
 const days = [
   "LUNES",
