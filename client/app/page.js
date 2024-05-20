@@ -229,7 +229,7 @@ export default function Page() {
   useEffect(() => {
     const reload = setInterval(() => {
       window.location.reload();
-    }, 1800000);
+    }, 120000);
     return () => {
       clearInterval(reload);
     };
