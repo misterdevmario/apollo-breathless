@@ -226,14 +226,14 @@ export default function Page() {
     })();
   }, [day]);
 
-  useEffect(() => {
-    const reload = setInterval(() => {
-      window.location.reload();
-    }, 120000);
-    return () => {
-      clearInterval(reload);
-    };
-  });
+  // useEffect(() => {
+  //   const reload = setInterval(() => {
+  //     window.location.reload();
+  //   }, 120000);
+  //   return () => {
+  //     clearInterval(reload);
+  //   };
+  // });
   
   useEffect(() => {
     setTimeout(() => {

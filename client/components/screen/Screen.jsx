@@ -89,8 +89,8 @@ const Screen = () => {
     // updatScreenSaturday,
     // updatScreenSunday,
   ]);
-  console.log(  screen?.map(item => item.attributes.data.assets.map(item => item)));
-  console.log(screen)
+  console.log(screen?.map(item => item.attributes.data.assets.toString()))
+ // console.log(screen)
   const sortedScreen = screen?.sort((a, b) => a.id - b.id);
   return (
     <div className={styles.container}>
@@ -108,7 +108,7 @@ const Screen = () => {
             {}
             <div className={styles.image_video}>
              <Image
-             src= {item.attributes.data.assets?.map(item => item.toString())}
+             src= {item.attributes.data.assets[0]}
              alt="image"
              width={200}
              height={100}
