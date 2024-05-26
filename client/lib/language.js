@@ -177,7 +177,7 @@ export const weatherDesc = {
 export const sectionTitles = {
   en: {
     staff: "entertainment staff",
-    dining: "diner",
+    dining: "dinner",
     breaknlunch: "breakfast and lunch",
     bars: "bars",
     flyers: "other activities",
