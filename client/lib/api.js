@@ -3,14 +3,25 @@
 //Activities
 
 export async function getActivities() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/activities?pagination[page]=1&pagination[pageSize]=50`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/activities?pagination[page]=1&pagination[pageSize]=50`,
+    {
+      next: {
+        revalidate: 600, 
+    }
+});
   if (!res.ok) throw new Error("Failed to fetch data");
 
   return res.json();
 }
 export async function getActivtiesGallery() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/activitiesgalleries?populate=*`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/activitiesgalleries?populate=*`,
+    {
+      next: {
+        revalidate: 600, 
+      },
+    }
   );
   if (!res.ok) throw new Error("Failed to fetch data");
 
@@ -20,7 +31,11 @@ export async function getActivtiesGallery() {
 //Staff
 
 export async function getStaff() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs`,  {
+    next: {
+      revalidate: 600,
+    },
+  });
   if (!res.ok) throw new Error("Failed to fetch data");
 
   return res.json();
@@ -28,7 +43,11 @@ export async function getStaff() {
 
 export async function getStaffGallery() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/staffgalleries?populate=staffgallery`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/staffgalleries?populate=staffgallery`,  {
+      next: {
+        revalidate: 600, 
+      },
+    }
   );
   if (!res.ok) throw new Error("Failed to fetch data");
 
@@ -38,21 +57,32 @@ export async function getStaffGallery() {
 //Bars and restaurants
 
 export async function getDinning() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/dinnings`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/dinnings`,  {
+    next: {
+      revalidate: 600, 
+    },
+  });
   if (!res.ok) throw new Error("Failed to fetch data");
 
   return res.json();
 }
 
 export async function getBreakfast() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/breakfasts`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/breakfasts`,  {
+    next: {
+      revalidate: 600, 
+    },
+  });
   if (!res.ok) throw new Error("Failed to fetch data");
   return res.json();
 }
 
-
 export async function getBars() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/bars`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/bars`,  {
+    next: {
+      revalidate: 600, 
+    },
+  });
   if (!res.ok) throw new Error("Failed to fetch data");
 
   return res.json();
@@ -92,9 +122,6 @@ export async function getFlyersTitle() {
   return res.json();
 }
 
-
-
-
 //Method PUT
 
 //Activities
@@ -112,13 +139,13 @@ export async function putActivities(data, id) {
       body: JSON.stringify(data),
     }
   );
-res.ok?alert("Actividad actualizada"):null
+  res.ok ? alert("Actividad actualizada") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 //Staff
-export async function putStaff(data,id) {
+export async function putStaff(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs/${id}`,
     {
@@ -127,14 +154,14 @@ export async function putStaff(data,id) {
       body: JSON.stringify(data),
     }
   );
-  res.ok?alert("Staff actualizado"):null
+  res.ok ? alert("Staff actualizado") : null;
 
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 //Dinning
-export async function putDinning(data,id ) {
+export async function putDinning(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/dinnings/${id}`,
     {
@@ -143,14 +170,14 @@ export async function putDinning(data,id ) {
       body: JSON.stringify(data),
     }
   );
-  res.ok?alert("Restaurant actualizado"):null
+  res.ok ? alert("Restaurant actualizado") : null;
 
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 //Breakfast
-export async function putBreakfast(data,id) {
+export async function putBreakfast(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/breakfasts/${id}`,
     {
@@ -159,26 +186,26 @@ export async function putBreakfast(data,id) {
       body: JSON.stringify(data),
     }
   );
-  res.ok?alert("Restaurant actualizado"):null
+  res.ok ? alert("Restaurant actualizado") : null;
 
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 //Bars
-export async function putBars(data,id ) {
+export async function putBars(data, id) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/bars/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  res.ok?alert("Bar actualizado"):null
+  res.ok ? alert("Bar actualizado") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 //Flyers
-export async function putFlyers(data,id ) {
+export async function putFlyers(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/flyers/${id}`,
     {
@@ -187,14 +214,14 @@ export async function putFlyers(data,id ) {
       body: JSON.stringify(data),
     }
   );
-  res.ok?alert("Flyer actualizado"):null
+  res.ok ? alert("Flyer actualizado") : null;
 
   if (!res.ok) throw new Error("Failed to update data");
 
   return res.json();
 }
 
-export async function putFlyersTitle(data,id ) {
+export async function putFlyersTitle(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/flyer-titles/${id}`,
     {
@@ -203,7 +230,7 @@ export async function putFlyersTitle(data,id ) {
       body: JSON.stringify(data),
     }
   );
-  res.ok?alert("Titulo actualizado"):null
+  res.ok ? alert("Titulo actualizado") : null;
 
   if (!res.ok) throw new Error("Failed to update data");
 
@@ -214,43 +241,34 @@ export async function putFlyersTitle(data,id ) {
 
 //Activities
 export async function postActivities(data) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/activities`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }
-  );
-res.ok?alert("Actividad agregada exitosamente"):null
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/activities`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  res.ok ? alert("Actividad agregada exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 export async function postStaffs(data) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }
-  );
-res.ok?alert("Staff agregado exitosamente"):null
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  res.ok ? alert("Staff agregado exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
 
 export async function postFlyers(data) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/flyers`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }
-  );
-res.ok?alert("Flyer agregado exitosamente"):null
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/flyers`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  res.ok ? alert("Flyer agregado exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
@@ -263,10 +281,9 @@ export async function deleteActivities(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/activities/${id}`,
     {
       method: "DELETE",
-     
     }
   );
-res.ok?alert("Actividad eliminada exitosamente"):null
+  res.ok ? alert("Actividad eliminada exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
@@ -276,10 +293,9 @@ export async function deleteStaffs(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/staffs/${id}`,
     {
       method: "DELETE",
-     
     }
   );
-res.ok?alert("Staff eliminado exitosamente"):null
+  res.ok ? alert("Staff eliminado exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
@@ -288,14 +304,12 @@ export async function deleteFlyers(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/flyers/${id}`,
     {
       method: "DELETE",
-     
     }
   );
-res.ok?alert("Flyer eliminado exitosamente"):null
+  res.ok ? alert("Flyer eliminado exitosamente") : null;
   if (!res.ok) throw new Error("Failed to update data");
   return res.json();
 }
-
 
 // async function updateData(data) {
 //   try {
