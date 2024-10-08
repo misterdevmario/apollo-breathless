@@ -6,7 +6,7 @@ export async function getActivitiesTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays?pagination[page]=1&pagination[pageSize]=50`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -20,7 +20,7 @@ export async function postActivitiesTuesday(data) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -39,7 +39,7 @@ export async function putActivitiesTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -59,7 +59,7 @@ export async function deleteActivitiesTuesday(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -79,7 +79,7 @@ export async function getStaffsTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -93,7 +93,7 @@ export async function postStaffsTuesday(data) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -113,7 +113,7 @@ export async function putStaffsTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -134,7 +134,7 @@ export async function deleteStaffsTuesday(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -154,7 +154,7 @@ export async function getDinningTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/diningtuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -168,7 +168,7 @@ export async function putDinningTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/diningtuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -200,7 +200,7 @@ export async function putBreakfastTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/breakfasttuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -224,7 +224,7 @@ export async function getBarsTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/bartuestadies`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -237,7 +237,7 @@ export async function putBarsTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/bartuestadies/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -259,7 +259,7 @@ export async function getFlyersTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -273,7 +273,7 @@ export async function postFlyersTuesday(data) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -293,7 +293,7 @@ export async function putFlyersTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -313,7 +313,7 @@ export async function deleteFlyersTuesday(id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -333,7 +333,7 @@ export async function getFlyersTitleTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertitletuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -347,7 +347,7 @@ export async function putFlyersTitleTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertitletuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
@@ -368,7 +368,7 @@ export async function getScreensTuesday() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screentuesdays`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     }
   );
@@ -382,7 +382,7 @@ export async function putScreensTuesday(data, id) {
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/screentuesdays/${id}`,
     {
       next: {
-        revalidate: 600,
+        revalidate: 100,
       },
     },
     {
