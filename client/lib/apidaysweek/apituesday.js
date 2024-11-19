@@ -18,11 +18,7 @@ export async function getActivitiesTuesday() {
 export async function postActivitiesTuesday(data) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -37,11 +33,7 @@ export async function postActivitiesTuesday(data) {
 export async function putActivitiesTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -57,11 +49,7 @@ export async function putActivitiesTuesday(data, id) {
 export async function deleteActivitiesTuesday(id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/activitytuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+    
     {
       method: "DELETE",
     }
@@ -91,11 +79,7 @@ export async function getStaffsTuesday() {
 export async function postStaffsTuesday(data) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -111,11 +95,7 @@ export async function postStaffsTuesday(data) {
 export async function putStaffsTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -132,11 +112,7 @@ export async function putStaffsTuesday(data, id) {
 export async function deleteStaffsTuesday(id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/stafftuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "DELETE",
     }
@@ -166,11 +142,7 @@ export async function getDinningTuesday() {
 export async function putDinningTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/diningtuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -198,11 +170,7 @@ export async function getBreakfastTuesday() {
 export async function putBreakfastTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/breakfasttuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -235,11 +203,7 @@ export async function getBarsTuesday() {
 export async function putBarsTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/bartuestadies/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -271,11 +235,7 @@ export async function getFlyersTuesday() {
 export async function postFlyersTuesday(data) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -291,11 +251,7 @@ export async function postFlyersTuesday(data) {
 export async function putFlyersTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -311,11 +267,7 @@ export async function putFlyersTuesday(data, id) {
 export async function deleteFlyersTuesday(id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "DELETE",
     }
@@ -345,11 +297,7 @@ export async function getFlyersTitleTuesday() {
 export async function putFlyersTitleTuesday(data, id) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL2}/flyertitletuesdays/${id}`,
-    {
-      next: {
-        revalidate: 100,
-      },
-    },
+
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
